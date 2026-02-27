@@ -114,21 +114,27 @@
 
     <script>
       (function () {
-        var APP_SCHEME_PREFIX = 'com.fbc.comunidades://invite/';
-        var PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.fbc.comunidades';
+        var APP_SCHEME_PREFIX = 'com.fbc.circulo://invite/';
+        var PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.fbc.circulo';
 
         function getInviteToken() {
-          // Soporta:
-          // 1) https://dominio.com/invite/<token>
-          // 2) https://dominio.com/invite?token=<token>
+          // Para GitHub Pages se recomienda query param:
+          // https://dominio.com/invite/?token=<token>
+          var params = new URLSearchParams(window.location.search);
+          var tokenFromQuery = params.get('token');
+          if (tokenFromQuery) {
+            return tokenFromQuery;
+          }
+
+          // Fallback opcional por path (si luego agregas 404.html rewrite):
+          // https://dominio.com/invite/<token>
           var path = window.location.pathname;
           var parts = path.split('/').filter(Boolean);
           var inviteIdx = parts.indexOf('invite');
           if (inviteIdx >= 0 && parts[inviteIdx + 1]) {
             return decodeURIComponent(parts[inviteIdx + 1]);
           }
-          var params = new URLSearchParams(window.location.search);
-          return params.get('token') || '';
+          return '';
         }
 
         var token = getInviteToken();
@@ -160,7 +166,7 @@
             statusEl.textContent = 'Si no se abrió la app, toca "Abrir app" o instala desde Play Store.';
           }, 1500);
         } else {
-          statusEl.textContent = 'URL inválida: falta el token de invitación.';
+          statusEl.textContent = 'URL inválida. Usa: /invite/?token=<token>.';
         }
       })();
     </script>
