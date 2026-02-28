@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Unirse a Comunidad</title>
+    <title>Círculo | Comunidades cerca de ti</title>
+    <meta
+      name="description"
+      content="Círculo te ayuda a descubrir comunidades, unirte a eventos, confirmar asistencia y conectar con personas que comparten tus intereses."
+    />
     <style>
       :root {
         color-scheme: light;
@@ -12,6 +16,7 @@
         --text: #1a0804;
         --muted: #6c4b3d;
         --primary: #c0522a;
+        --primary-strong: #9f3f1d;
         --border: #e7d5cb;
       }
 
@@ -26,143 +31,178 @@
         color: var(--text);
       }
 
-      .wrap {
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
+      .page {
+        max-width: 1040px;
+        margin: 0 auto;
         padding: 24px;
       }
 
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 18px;
+        margin-top: 20px;
+      }
+
       .card {
-        width: 100%;
-        max-width: 520px;
-        border: 1px solid var(--border);
-        border-radius: 14px;
         background: var(--surface);
-        padding: 20px;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 22px;
       }
 
       h1 {
-        margin: 0 0 8px;
+        margin: 0 0 10px;
+        font-size: 40px;
+        line-height: 1.05;
+      }
+
+      h2 {
+        margin: 0 0 10px;
         font-size: 24px;
       }
 
       p {
-        margin: 0 0 12px;
+        margin: 0;
         color: var(--muted);
-        line-height: 1.45;
+        line-height: 1.5;
       }
 
-      .token {
-        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-        background: #f8f2ee;
+      .topline {
+        display: inline-flex;
         border: 1px solid var(--border);
-        border-radius: 8px;
-        padding: 10px;
-        word-break: break-all;
+        border-radius: 999px;
+        padding: 6px 10px;
+        font-size: 12px;
+        color: var(--muted);
         margin-bottom: 14px;
+        background: #fbf7f4;
       }
 
       .actions {
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
+        margin-top: 18px;
       }
 
       .btn {
-        border: 0;
+        text-decoration: none;
         border-radius: 10px;
-        padding: 11px 14px;
+        padding: 12px 14px;
         font-weight: 600;
-        cursor: pointer;
+        border: 1px solid transparent;
       }
 
       .btn-primary {
         background: var(--primary);
-        color: white;
+        color: #fff;
+      }
+
+      .btn-primary:hover {
+        background: var(--primary-strong);
       }
 
       .btn-secondary {
         background: #f7f1ec;
+        border-color: var(--border);
         color: var(--text);
-        border: 1px solid var(--border);
       }
 
-      .small {
-        margin-top: 10px;
-        font-size: 12px;
+      .list {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+
+      .list li {
+        margin-bottom: 10px;
+      }
+
+      .grid {
+        margin-top: 18px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .mini {
+        background: #fcf9f6;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 14px;
+      }
+
+      .mini strong {
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      footer {
+        margin-top: 20px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      @media (max-width: 860px) {
+        .hero,
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 32px;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="wrap">
-      <main class="card">
-        <h1>Únete a la comunidad</h1>
-        <p id="status">Intentando abrir la app...</p>
-        <div class="token" id="token">Cargando token...</div>
+    <div class="page">
+      <section class="hero">
+        <article class="card">
+          <span class="topline">Círculo App</span>
+          <h1>Encuentra tu comunidad y activa planes reales</h1>
+          <p>
+            Círculo conecta personas por intereses comunes: deporte, tecnología, arte y más.
+            Descubre comunidades activas cerca de ti, únete en segundos y participa en eventos.
+          </p>
 
-        <div class="actions">
-          <button class="btn btn-primary" id="openApp">Abrir app</button>
-          <button class="btn btn-secondary" id="openPlayStore">Ir a Play Store</button>
-        </div>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.fbc.circulo" rel="noopener noreferrer">Instalar en Android</a>
+            <a class="btn btn-secondary" href="/invite/">Tengo un link de invitación</a>
+          </div>
+        </article>
 
-        <p class="small">
-          Si la app no abre automáticamente, usa el botón <strong>Abrir app</strong>.
-        </p>
-      </main>
+        <aside class="card">
+          <h2>Qué puedes hacer en Círculo</h2>
+          <ul class="list">
+            <li>Explorar comunidades por ubicación e intereses.</li>
+            <li>Unirte a eventos y confirmar asistencia (RSVP).</li>
+            <li>Comentar y compartir en conversaciones de comunidad.</li>
+            <li>Recibir invitaciones directas por enlace o QR.</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="grid">
+        <article class="mini">
+          <strong>1. Descubre</strong>
+          <p>Encuentra comunidades cercanas con actividad real.</p>
+        </article>
+        <article class="mini">
+          <strong>2. Únete</strong>
+          <p>Solicita acceso y participa en eventos en minutos.</p>
+        </article>
+        <article class="mini">
+          <strong>3. Comparte</strong>
+          <p>Invita amigos con un enlace o QR de tu comunidad.</p>
+        </article>
+      </section>
+
+      <footer>
+        Círculo · Comunidades locales para conectar personas en el mundo real.
+      </footer>
     </div>
-
-    <script>
-      (function () {
-        var APP_SCHEME_PREFIX = 'com.fbc.comunidades://invite/';
-        var PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.fbc.comunidades';
-
-        function getInviteToken() {
-          // Soporta:
-          // 1) https://dominio.com/invite/<token>
-          // 2) https://dominio.com/invite?token=<token>
-          var path = window.location.pathname;
-          var parts = path.split('/').filter(Boolean);
-          var inviteIdx = parts.indexOf('invite');
-          if (inviteIdx >= 0 && parts[inviteIdx + 1]) {
-            return decodeURIComponent(parts[inviteIdx + 1]);
-          }
-          var params = new URLSearchParams(window.location.search);
-          return params.get('token') || '';
-        }
-
-        var token = getInviteToken();
-        var tokenEl = document.getElementById('token');
-        var statusEl = document.getElementById('status');
-        var appUrl = APP_SCHEME_PREFIX + encodeURIComponent(token);
-
-        tokenEl.textContent = token || 'Token no encontrado en la URL';
-
-        function openApp() {
-          if (!token) {
-            statusEl.textContent = 'No se encontró token de invitación.';
-            return;
-          }
-          window.location.href = appUrl;
-        }
-
-        function openPlayStore() {
-          window.location.href = PLAY_STORE_URL;
-        }
-
-        document.getElementById('openApp').addEventListener('click', openApp);
-        document.getElementById('openPlayStore').addEventListener('click', openPlayStore);
-
-        if (token) {
-          // Intento automático, luego fallback visual.
-          openApp();
-          setTimeout(function () {
-            statusEl.textContent = 'Si no se abrió la app, toca "Abrir app" o instala desde Play Store.';
-          }, 1500);
-        } else {
-          statusEl.textContent = 'URL inválida: falta el token de invitación.';
-        }
-      })();
-    </script>
   </body>
 </html>
