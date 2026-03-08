@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Círculo | Tu gente, tus planes</title>
+    <meta
+      name="description"
+      content="Círculo te conecta con comunidades locales para crear planes reales: deporte, tecnología, arte y mucho más."
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f8efe5;
+        --surface: #ffffff;
+        --surface-soft: #fff8f2;
+        --text: #1f100c;
+        --muted: #6a4d40;
+        --primary: #cb5121;
+        --primary-strong: #a9411a;
+        --accent: #f29f46;
+        --border: #edd8cc;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at 10% 0%, #ffd9bc 0%, transparent 38%),
+          radial-gradient(circle at 100% 20%, #ffd8b4 0%, transparent 35%),
+          var(--bg);
+        color: var(--text);
+      }
+
+      .page {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 24px 20px 40px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.25fr 1fr;
+        gap: 16px;
+        margin-top: 14px;
+      }
+
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 24px;
+        box-shadow: 0 12px 28px rgba(88, 38, 17, 0.08);
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: 44px;
+        line-height: 1.02;
+        letter-spacing: -0.4px;
+      }
+
+      h2 {
+        margin: 0 0 12px;
+        font-size: 25px;
+      }
+
+      p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .topline {
+        display: inline-flex;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 7px 11px;
+        font-size: 12px;
+        color: var(--muted);
+        margin-bottom: 16px;
+        background: #fff5ee;
+      }
+
+      .actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+
+      .btn {
+        text-decoration: none;
+        border-radius: 12px;
+        padding: 12px 16px;
+        font-weight: 600;
+        border: 1px solid transparent;
+      }
+
+      .btn-primary {
+        background: var(--primary);
+        color: #fff;
+      }
+
+      .btn-primary:hover {
+        background: var(--primary-strong);
+      }
+
+      .btn-secondary {
+        background: #fff8f1;
+        border-color: var(--border);
+        color: var(--text);
+      }
+
+      .list {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+
+      .list li {
+        margin-bottom: 10px;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .stat {
+        background: var(--surface-soft);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 10px;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 20px;
+        color: var(--primary);
+      }
+
+      .grid {
+        margin-top: 16px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .mini {
+        background: #fff8f2;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 15px;
+      }
+
+      .mini strong {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .contact {
+        margin-top: 16px;
+        background: linear-gradient(135deg, #fff5ed 0%, #ffe7d2 100%);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 14px;
+      }
+
+      .contact a {
+        color: var(--primary-strong);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      footer {
+        margin-top: 18px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      @media (max-width: 860px) {
+        .hero,
+        .grid,
+        .stats {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 32px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <section class="hero">
+        <article class="card">
+          <span class="topline">Círculo App</span>
+          <h1>Conecta con personas cerca de ti y arma planes reales</h1>
+          <p>
+            Círculo es una app para descubrir comunidades activas en tu ciudad. Elige tus intereses,
+            únete a grupos, participa en eventos y conoce gente con tus mismas ganas de hacer cosas.
+          </p>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.fbc.circulo" rel="noopener noreferrer">Instalar Círculo</a>
+            <a class="btn btn-secondary" href="/invite/">Tengo un link de invitación</a>
+            <a class="btn btn-secondary" href="/terms/">Términos y condiciones</a>
+          </div>
+
+          <section class="stats">
+            <div class="stat">
+              <strong>+30</strong>
+              <p>tipos de comunidades para explorar</p>
+            </div>
+            <div class="stat">
+              <strong>24/7</strong>
+              <p>actividad en comunidades y eventos</p>
+            </div>
+            <div class="stat">
+              <strong>1 min</strong>
+              <p>para unirte y empezar a participar</p>
+            </div>
+          </section>
+        </article>
+
+        <aside class="card">
+          <h2>¿Qué puedes hacer en Círculo?</h2>
+          <ul class="list">
+            <li>Explorar comunidades por ubicación e intereses.</li>
+            <li>Unirte a eventos y confirmar asistencia (RSVP).</li>
+            <li>Comentar y compartir en conversaciones de comunidad.</li>
+            <li>Recibir invitaciones directas por enlace o QR.</li>
+          </ul>
+
+          <div class="contact">
+            <p>
+              ¿Tienes dudas, sugerencias o necesitas ayuda?
+              Escríbenos a
+              <a href="mailto:contactanos@circulo-app.org">contactanos@circulo-app.org</a>
+            </p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="grid">
+        <article class="mini">
+          <strong>1. Descubre comunidades</strong>
+          <p>Encuentra comunidades cercanas con actividad real.</p>
+        </article>
+        <article class="mini">
+          <strong>2. Únete en segundos</strong>
+          <p>Solicita acceso y participa en eventos en minutos.</p>
+        </article>
+        <article class="mini">
+          <strong>3. Comparte e invita</strong>
+          <p>Invita amigos con un enlace o QR de tu comunidad.</p>
+        </article>
+      </section>
+
+      <footer>
+        Círculo · Comunidades locales para conectar personas en el mundo real.
+      </footer>
+    </div>
+  </body>
+</html>
