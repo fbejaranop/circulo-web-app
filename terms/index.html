@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Círculo | Tu gente, tus planes</title>
+    <title>Círculo | Términos y Condiciones</title>
     <meta
       name="description"
-      content="Círculo te conecta con comunidades locales para crear planes reales: deporte, tecnología, arte y mucho más."
+      content="Términos y condiciones de uso de Círculo, plataforma para descubrir comunidades y participar en eventos."
     />
     <style>
       :root {
@@ -18,7 +18,6 @@
         --muted: #6a4d40;
         --primary: #cb5121;
         --primary-strong: #a9411a;
-        --accent: #f29f46;
         --border: #edd8cc;
       }
 
@@ -37,42 +36,17 @@
       }
 
       .page {
-        max-width: 1120px;
+        max-width: 980px;
         margin: 0 auto;
-        padding: 24px 20px 40px;
+        padding: 24px 20px 42px;
       }
 
-      .hero {
-        display: grid;
-        grid-template-columns: 1.25fr 1fr;
-        gap: 16px;
-        margin-top: 14px;
-      }
-
-      .card {
+      .header {
         background: var(--surface);
         border: 1px solid var(--border);
         border-radius: 18px;
         padding: 24px;
         box-shadow: 0 12px 28px rgba(88, 38, 17, 0.08);
-      }
-
-      h1 {
-        margin: 0 0 12px;
-        font-size: 44px;
-        line-height: 1.02;
-        letter-spacing: -0.4px;
-      }
-
-      h2 {
-        margin: 0 0 12px;
-        font-size: 25px;
-      }
-
-      p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.55;
       }
 
       .topline {
@@ -82,87 +56,83 @@
         padding: 7px 11px;
         font-size: 12px;
         color: var(--muted);
-        margin-bottom: 16px;
+        margin-bottom: 14px;
         background: #fff5ee;
       }
 
-      .actions {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        margin-top: 20px;
-      }
-
-      .btn {
+      .brandLink {
+        width: 72px;
+        height: 72px;
+        border-radius: 18px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--border);
+        background: #fff5ee;
         text-decoration: none;
-        border-radius: 12px;
-        padding: 12px 16px;
-        font-weight: 600;
-        border: 1px solid transparent;
+        margin-bottom: 14px;
       }
 
-      .btn-primary {
-        background: var(--primary);
-        color: #fff;
+      .brandIcon {
+        width: 56px;
+        height: 56px;
+        border-radius: 14px;
+        display: block;
       }
 
-      .btn-primary:hover {
-        background: var(--primary-strong);
+      h1 {
+        margin: 0 0 10px;
+        font-size: 40px;
+        line-height: 1.04;
+        letter-spacing: -0.35px;
       }
 
-      .btn-secondary {
-        background: #fff8f1;
-        border-color: var(--border);
-        color: var(--text);
-      }
-
-      .list {
+      .meta {
         margin: 0;
-        padding-left: 18px;
         color: var(--muted);
+        font-size: 14px;
       }
 
-      .list li {
-        margin-bottom: 10px;
+      .content {
+        margin-top: 14px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 24px;
+        box-shadow: 0 12px 28px rgba(88, 38, 17, 0.08);
       }
 
-      .stats {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 10px;
+      section + section {
         margin-top: 18px;
       }
 
-      .stat {
+      h2 {
+        margin: 0 0 8px;
+        font-size: 24px;
+      }
+
+      p,
+      li {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.56;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      li + li {
+        margin-top: 7px;
+      }
+
+      .note {
+        margin-top: 14px;
         background: var(--surface-soft);
         border: 1px solid var(--border);
         border-radius: 12px;
-        padding: 10px;
-      }
-
-      .stat strong {
-        display: block;
-        font-size: 20px;
-        color: var(--primary);
-      }
-
-      .grid {
-        margin-top: 16px;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
-      }
-
-      .mini {
-        background: #fff8f2;
-        border: 1px solid var(--border);
-        border-radius: 14px;
-        padding: 15px;
-      }
-
-      .mini strong {
-        display: block;
-        margin-bottom: 8px;
+        padding: 14px;
       }
 
       .contact {
@@ -180,95 +150,159 @@
       }
 
       footer {
-        margin-top: 18px;
+        margin-top: 16px;
         text-align: center;
         color: var(--muted);
         font-size: 13px;
       }
 
       @media (max-width: 860px) {
-        .hero,
-        .grid,
-        .stats {
-          grid-template-columns: 1fr;
-        }
-
         h1 {
-          font-size: 32px;
+          font-size: 31px;
         }
       }
     </style>
   </head>
   <body>
     <div class="page">
-      <section class="hero">
-        <article class="card">
-          <span class="topline">Círculo App</span>
-          <h1>Conecta con personas cerca de ti y arma planes reales</h1>
+      <header class="header">
+        <a class="brandLink" href="https://circulo-app.org/" aria-label="Ir al inicio de Círculo">
+          <img class="brandIcon" src="../assets/icon-radar-preview-vivid.png" alt="Icono de Círculo" />
+        </a>
+        <br />
+        <span class="topline">Círculo App</span>
+        <h1>Términos y Condiciones</h1>
+        <p class="meta">Última actualización: 8 de marzo de 2026</p>
+      </header>
+
+      <main class="content">
+        <section>
+          <h2>1. Aceptación de los términos</h2>
           <p>
-            Círculo es una app para descubrir comunidades activas en tu ciudad. Elige tus intereses,
-            únete a grupos, participa en eventos y conoce gente con tus mismas ganas de hacer cosas.
+            Al usar Círculo, aceptas estos Términos y Condiciones. Si no estás de acuerdo con alguna parte, debes abstenerte de usar la
+            aplicación y sus servicios.
           </p>
+        </section>
 
-          <div class="actions">
-            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.fbc.circulo" rel="noopener noreferrer">Instalar Círculo</a>
-            <a class="btn btn-secondary" href="/invite/">Tengo un link de invitación</a>
-            <a class="btn btn-secondary" href="/terms/">Términos y condiciones</a>
-          </div>
-
-          <section class="stats">
-            <div class="stat">
-              <strong>+30</strong>
-              <p>tipos de comunidades para explorar</p>
-            </div>
-            <div class="stat">
-              <strong>24/7</strong>
-              <p>actividad en comunidades y eventos</p>
-            </div>
-            <div class="stat">
-              <strong>1 min</strong>
-              <p>para unirte y empezar a participar</p>
-            </div>
-          </section>
-        </article>
-
-        <aside class="card">
-          <h2>¿Qué puedes hacer en Círculo?</h2>
-          <ul class="list">
-            <li>Explorar comunidades por ubicación e intereses.</li>
-            <li>Unirte a eventos y confirmar asistencia (RSVP).</li>
-            <li>Comentar y compartir en conversaciones de comunidad.</li>
-            <li>Recibir invitaciones directas por enlace o QR.</li>
+        <section>
+          <h2>2. Elegibilidad y cuenta</h2>
+          <ul>
+            <li>Debes proporcionar información veraz y mantenerla actualizada.</li>
+            <li>Eres responsable de la seguridad de tu cuenta y del uso de tus credenciales.</li>
+            <li>No puedes suplantar identidad ni crear cuentas con datos falsos.</li>
           </ul>
+        </section>
 
-          <div class="contact">
-            <p>
-              ¿Tienes dudas, sugerencias o necesitas ayuda?
-              Escríbenos a
-              <a href="mailto:contactanos@circulo-app.org">contactanos@circulo-app.org</a>
-            </p>
-          </div>
-        </aside>
-      </section>
+        <section>
+          <h2>3. Uso permitido de la plataforma</h2>
+          <ul>
+            <li>Círculo se usa para crear, descubrir y participar en comunidades y eventos.</li>
+            <li>Debes interactuar con respeto y cumplir la ley aplicable.</li>
+            <li>
+              No está permitido publicar, promover o coordinar contenido ofensivo, ilegal, fraudulento, discriminatorio, racista,
+              xenófobo, homofóbico, transfóbico o que incite odio o violencia.
+            </li>
+            <li>No está permitido usar Círculo para actividades delictivas o para facilitar cualquier conducta ilegal.</li>
+            <li>No está permitido el acoso, incluyendo acoso sexual, amenazas, intimidación o hostigamiento dentro o fuera de la app.</li>
+          </ul>
+        </section>
 
-      <section class="grid">
-        <article class="mini">
-          <strong>1. Descubre comunidades</strong>
-          <p>Encuentra comunidades cercanas con actividad real.</p>
-        </article>
-        <article class="mini">
-          <strong>2. Únete en segundos</strong>
-          <p>Solicita acceso y participa en eventos en minutos.</p>
-        </article>
-        <article class="mini">
-          <strong>3. Comparte e invita</strong>
-          <p>Invita amigos con un enlace o QR de tu comunidad.</p>
-        </article>
-      </section>
+        <section>
+          <h2>4. Comunidades, eventos y moderación</h2>
+          <ul>
+            <li>Los owners y administradores pueden gestionar miembros, solicitudes y moderación dentro de su comunidad.</li>
+            <li>Las comunidades pueden ser públicas o privadas según configuración del owner/admin.</li>
+            <li>Círculo podrá limitar, suspender o eliminar contenido o acceso cuando exista incumplimiento de estos términos.</li>
+          </ul>
+        </section>
 
-      <footer>
-        Círculo · Comunidades locales para conectar personas en el mundo real.
-      </footer>
+        <section>
+          <h2>5. Contenido generado por usuarios</h2>
+          <ul>
+            <li>Conservas la titularidad de tu contenido (publicaciones, comentarios e información compartida).</li>
+            <li>
+              Otorgas a Círculo una licencia no exclusiva para alojar, mostrar y procesar dicho contenido con el fin de operar el servicio.
+            </li>
+            <li>Eres responsable por el contenido que publiques y por contar con los permisos necesarios.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>6. Seguridad y comportamiento</h2>
+          <ul>
+            <li>No intentes vulnerar, deshabilitar o afectar la seguridad de la aplicación o su infraestructura.</li>
+            <li>No está permitido usar bots, scraping abusivo o automatizaciones no autorizadas.</li>
+            <li>Debes respetar la privacidad y datos personales de otros usuarios.</li>
+            <li>
+              No está permitido compartir datos personales de terceros sin autorización, ni difundir contenido íntimo o sensible sin
+              consentimiento.
+            </li>
+            <li>
+              En comunidades y eventos, los usuarios deben mantener un comportamiento seguro y respetuoso. Cualquier conducta de riesgo,
+              violencia o acoso podrá ser sancionada.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>7. Medidas de cumplimiento y reportes a autoridades</h2>
+          <p>
+            Nos reservamos el derecho de eliminar contenido, suspender funcionalidades, bloquear temporal o permanentemente cuentas y
+            restringir acceso a comunidades cuando detectemos incumplimientos de estos términos, en especial en casos de discriminación,
+            racismo, actividades delictivas, acoso sexual o cualquier forma de violencia. También podremos denunciar ante las autoridades
+            competentes cualquier conducta que pueda constituir un delito o representar riesgo para usuarios o terceros.
+          </p>
+        </section>
+
+        <section>
+          <h2>8. Limitación de responsabilidad</h2>
+          <p>
+            Círculo ofrece una plataforma tecnológica para conectar personas y comunidades. La organización y ejecución de actividades entre
+            usuarios es responsabilidad de quienes participan. En la medida permitida por la ley, Círculo no será responsable por daños
+            indirectos, incidentales o derivados del uso de la plataforma.
+          </p>
+        </section>
+
+        <section>
+          <h2>9. Cambios en el servicio y en estos términos</h2>
+          <p>
+            Podemos actualizar funciones, políticas y estos Términos y Condiciones en cualquier momento. Cuando el cambio sea relevante,
+            informaremos por medios razonables dentro de la plataforma o canales oficiales.
+          </p>
+        </section>
+
+        <section>
+          <h2>10. Terminación de cuenta</h2>
+          <p>
+            Podemos suspender o terminar cuentas que incumplan estos términos o representen riesgo para la comunidad o la plataforma, sin
+            perjuicio de otras medidas legales aplicables.
+          </p>
+        </section>
+
+        <section>
+          <h2>11. Contacto</h2>
+          <p>
+            Para soporte, dudas legales o solicitudes relacionadas con estos términos, contáctanos en
+            <a href="mailto:contactanos@circulo-app.org">contactanos@circulo-app.org</a>.
+          </p>
+        </section>
+
+        <div class="note">
+          <p>
+            Estos términos constituyen un acuerdo entre el usuario y Círculo sobre el uso de la plataforma. Si una disposición se declara
+            inválida, las demás permanecerán vigentes.
+          </p>
+        </div>
+
+        <div class="contact">
+          <p>
+            ¿Necesitas ayuda con tu cuenta o una situación en comunidad? Escríbenos a
+            <a href="mailto:contactanos@circulo-app.org">contactanos@circulo-app.org</a>
+          </p>
+        </div>
+      </main>
+
+      <footer>© 2026 Círculo. Todos los derechos reservados.</footer>
     </div>
   </body>
 </html>
