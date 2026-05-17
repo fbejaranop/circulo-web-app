@@ -103,11 +103,11 @@
 
         <div class="actions">
           <button class="btn btn-primary" id="openApp">Abrir app</button>
-          <button class="btn btn-secondary" id="openPlayStore">Ir a Play Store</button>
+          <button class="btn btn-secondary" id="openStore">Ir a la tienda</button>
         </div>
 
         <p class="small">
-          Si la app no abre automáticamente, usa el botón <strong>Abrir app</strong>.
+          Si la app no abre automáticamente, te llevaremos a la tienda para instalarla.
         </p>
       </main>
     </div>
@@ -115,7 +115,9 @@
     <script>
       (function () {
         var APP_SCHEME_PREFIX = 'com.fbc.circulo://invite/';
-        var PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.fbc.circulo';
+        var ANDROID_STORE_URL = 'https://play.google.com/store/apps/details?id=com.fbc.circulo';
+        var IOS_STORE_URL = 'https://apps.apple.com/us/app/circulo-app/id6761856473';
+        var didLeavePage = false;
 
         function getInviteToken() {
           // Para GitHub Pages se recomienda query param:
@@ -141,30 +143,66 @@
         var tokenEl = document.getElementById('token');
         var statusEl = document.getElementById('status');
         var appUrl = APP_SCHEME_PREFIX + encodeURIComponent(token);
+        var storeUrl = getStoreUrl();
 
         tokenEl.textContent = token || 'Token no encontrado en la URL';
+
+        function isAndroid() {
+          return /Android/i.test(window.navigator.userAgent);
+        }
+
+        function isIos() {
+          return /iPhone|iPad|iPod/i.test(window.navigator.userAgent);
+        }
+
+        function getStoreUrl() {
+          return isIos() ? IOS_STORE_URL : ANDROID_STORE_URL;
+        }
+
+        function getOpenUrl() {
+          if (!isAndroid()) {
+            return appUrl;
+          }
+
+          var fallbackUrl = encodeURIComponent(ANDROID_STORE_URL);
+          return (
+            'intent://invite/' +
+            encodeURIComponent(token) +
+            '#Intent;scheme=com.fbc.circulo;package=com.fbc.circulo;S.browser_fallback_url=' +
+            fallbackUrl +
+            ';end'
+          );
+        }
 
         function openApp() {
           if (!token) {
             statusEl.textContent = 'No se encontró token de invitación.';
             return;
           }
-          window.location.href = appUrl;
+          window.location.href = getOpenUrl();
         }
 
-        function openPlayStore() {
-          window.location.href = PLAY_STORE_URL;
+        function openStore() {
+          window.location.href = storeUrl;
         }
 
         document.getElementById('openApp').addEventListener('click', openApp);
-        document.getElementById('openPlayStore').addEventListener('click', openPlayStore);
+        document.getElementById('openStore').addEventListener('click', openStore);
+        document.addEventListener('visibilitychange', function () {
+          if (document.hidden) {
+            didLeavePage = true;
+          }
+        });
 
         if (token) {
-          // Intento automático, luego fallback visual.
           openApp();
           setTimeout(function () {
-            statusEl.textContent = 'Si no se abrió la app, toca "Abrir app" o instala desde Play Store.';
-          }, 1500);
+            if (didLeavePage) {
+              return;
+            }
+            statusEl.textContent = 'No detectamos la app instalada. Abriendo la tienda...';
+            openStore();
+          }, isIos() ? 2200 : 1800);
         } else {
           statusEl.textContent = 'URL inválida. Usa: /invite/?token=<token>.';
         }
